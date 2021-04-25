@@ -1,0 +1,68 @@
+.mobile-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    display: none;
+    width: 100%;
+    background-color: $primary-color;
+    &__list {
+        @include centered-flex;
+        color: $white;
+        font-weight: 700;
+        
+    }
+
+    &__item {
+        flex-grow: 1;
+        &:nth-child(2) {
+            background-color: $dark-blue;
+        }
+    }
+
+    &__link {
+        @include centered-flex;
+        justify-content: center;
+        padding: 12px 11px 13px 11px;
+        transition-duration: .2s; 
+        &:active {
+            color: $pink-hover;
+            .mobile-menu__icon {
+                fill: $pink-hover;
+            }
+        }  
+    }
+
+    &__icon {
+        width: 16px;
+        height: 16px;
+        fill: $secondary-white;
+    }
+    
+    &__text {
+        margin-left: 4px;
+    }
+}
+
+.share-link {
+    padding: 14px;
+}
+.share-item {
+    flex-shrink: 0;
+    background-color: $share;
+}
+@media all and (max-width: 767px) {
+    .mobile-menu {
+        display: block;
+    } 
+}
+
+@media all and (max-width: 330px) {
+    .mobile-menu__link {
+        padding: 12px 5px 13px 5px;
+    }
+    .share-link {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

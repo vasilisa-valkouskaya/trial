@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Maven Pro';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('../../assets/fonts/MavenPro.ttf');
+}
+
+
+// mixins
+@mixin text-style ($size, $height, $color) {
+    font-size: $size;
+    line-height: $height;
+    color: $color;
+}
+
+@mixin centered-flex {
+    display: flex;
+    align-items: center;
+}
+
+
+// general-settings
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $primary-font;
+    @include text-style($primary-size, $primary-height, $grey-text);
+}
+
+a {
+    transition-duration: .2s;
+    &:hover {
+        color: $pink-hover;
+        &:after {
+            background-color: $pink-hover;
+        } 
+    } 
+}
+
+main {
+    background-color: $bg-grey;
+}
+
+
+// стилизация скроллбара
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px; 
+    background-color: $light-grey;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $grey-text;
+    border-radius: 3px;
+}
+
+html, body {
+    scrollbar-color: $light-grey $grey-text;   
+    scrollbar-width: 8x;  
+}
+
+
+
+
